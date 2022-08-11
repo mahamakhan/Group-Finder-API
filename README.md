@@ -19,23 +19,21 @@
 #### [CHD](https://drive.google.com/file/d/1PrY90V_GgitMQ0zOjcT-2ik2PiWB1y2D/view)
 
 ---
-### **_Future Updates_**
+### **_Description_**
 #### Creating a web application where users can create a platform to meet up with other like minded people to play a specific video game of their choosing.
 #### The user will be able to do the following:
 - Create an account
 - Create a game
 - Find and join a game
+- Update/delete details
 - Designate a specific time and date for meet up.
 ---
 
-### **_Getting Started_**
 
----
 
 ### **_Technologies Used_**
 - Postgres
 - Express
-- React.js
 - Node.js
 ---
 ### **_Screenshots_**
