@@ -1,5 +1,5 @@
 
-# Group-Finder-Backend
+# Group Finder API
 ## [Group Finder Frontend](https://github.com/Skim1571/Group-Finder)
 ## Date: 8/11/2022
 
