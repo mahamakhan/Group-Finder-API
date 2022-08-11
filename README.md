@@ -4,10 +4,10 @@
 ## Date: 8/11/2022
 
 ### By:
-### By: Steve Kim [GitHub](https://github.com/Skim1571) | [LinkedIn](https://www.linkedin.com/in/skim1571/)
-### By: Johnathan R Weil [GitHub](https://github.com/JwR513) | [LinkedIn](https://www.linkedin.com/in/johnathan-weil-69b100229/)
-### By: Michael Pines[GitHub](https://github.com/smyp1) | [Linkedin](https://www.linkedin.com/in/mickey-pines/)
-#### By: Maham Khan [LinkedIn](https://www.linkedin.com/in/mahamakhan/)  | [Github](https://github.com/mahamakhan)
+### Steve Kim [GitHub](https://github.com/Skim1571) | [LinkedIn](https://www.linkedin.com/in/skim1571/)
+### Johnathan R Weil [GitHub](https://github.com/JwR513) | [LinkedIn](https://www.linkedin.com/in/johnathan-weil-69b100229/)
+### Michael Pines[GitHub](https://github.com/smyp1) | [Linkedin](https://www.linkedin.com/in/mickey-pines/)
+### Maham Khan [LinkedIn](https://www.linkedin.com/in/mahamakhan/)  | [Github](https://github.com/mahamakhan)
 
 ![Image1](https://images.squarespace-cdn.com/content/v1/5e1f818988a3ad55be25f040/1579628831177-LCJBPP1HBKY2L6HIEHGX/cover_photo_without_slogan.jpg)
 
