@@ -14,4 +14,19 @@ const registerPlayer = async (req, res) => {
   let createPlayer = await Player.create(req.body);
   res.send(createPlayer);
 };
-module.exports = { getPlayers, getPlayer, registerPlayer };
+
+
+const updatePlayer = async (req, res) => {
+  let player = await Player.update(req.body,{
+    where: { id: req.params.players_id},
+    returning: true,
+  });
+  res.send(player);
+};
+
+const deletePlayer = async (req, res) => {
+  let player = await Player.destroy({ where: { id: req.params.players_id } });
+  res.send(`player ${req.params.players_id} was deleted`);
+};
+
+module.exports = { getPlayers, getPlayer, registerPlayer, updatePlayer, deletePlayer};
