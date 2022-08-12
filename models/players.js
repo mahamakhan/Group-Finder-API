@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Players',
+    modelName: 'Player',
+    tableName: "players"
   });
   return Players;
 };
