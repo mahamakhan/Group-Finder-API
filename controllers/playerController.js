@@ -1,5 +1,4 @@
-const { Player } = require("../models/players");
-
+const { Player } = require("../models");
 
 const getPlayers = async (req, res) => {
   let findPlayers = await Player.findAll();
@@ -17,4 +16,3 @@ const registerPlayer = async (req, res) => {
 };
 
 module.exports = { getPlayers, getPlayer, registerPlayer };
-
