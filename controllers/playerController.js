@@ -6,7 +6,7 @@ const getPlayers = async (req, res) => {
 };
 
 const getPlayer = async (req, res) => {
-  let findPlayer = await Player.findByPk(req.params);
+  let findPlayer = await Player.findByPk(req.params.players_id);
   res.send(findPlayer);
 };
 
