@@ -14,5 +14,4 @@ const registerPlayer = async (req, res) => {
   let createPlayer = await Player.create(req.body);
   res.send(createPlayer);
 };
-
 module.exports = { getPlayers, getPlayer, registerPlayer };
