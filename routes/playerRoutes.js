@@ -1,8 +1,8 @@
-const Router = require('express').Router()
-const controller = require('../controllers/UserController')
+const router = require("express").Router();
+const controller = require("../controllers/UserController");
 
-Router.get('/', controller.getplayers)
-Router.get('/:player_id', controller.getplayer)
-Router.post('/:player_id', controller.registerPlayer)
+router.get("/", controller.getplayers);
+router.get("/:player_id", controller.getplayer);
+router.post("/:player_id", controller.registerPlayer);
 
-module.exports = Router
+module.exports = router;
