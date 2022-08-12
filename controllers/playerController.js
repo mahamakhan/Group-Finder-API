@@ -1,17 +1,17 @@
 const { Player } = require("../models");
 
-const getplayers = async (req, res) => {
-  let findPlayers = await Player.FindAll();
+const getPlayers = async (req, res) => {
+  let findPlayers = await Player.findAll();
   res.send(findPlayers);
 };
 
-const getplayer = async (req, res) => {
+const getPlayer = async (req, res) => {
   let findPlayer = await Player.findByPk(req.params);
   res.send(findPlayer);
 };
 
 const registerPlayer = async (req, res) => {
-  let createPlayer = await Player.create(req.params);
+  let createPlayer = await Player.create(req.body);
   res.send(createPlayer);
 };
-module.exports = { getplayers, getplayer, registerPlayer };
+module.exports = { getPlayers, getPlayer, registerPlayer };
