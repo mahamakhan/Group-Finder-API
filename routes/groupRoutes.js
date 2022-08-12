@@ -1,10 +1,10 @@
-const Router = require('express').Router()
-const controller = require('../controllers/groupController')
+const router = require("express").Router();
+const controller = require("../controllers/groupController");
 
-Router.get('/', controller.getAllGroups)
-Router.get('/:group_id', controller.getGroup)
-Router.post('/:group_id', controller.createGroup)
-Router.put('/:group_id', controller.updateGroup)
-Router.delete('/:group_id', controller.deleteGroup)
+router.get("/", controller.getAllGroups);
+router.get("/:group_id", controller.getGroup);
+router.post("/:player_id/:/game_id", controller.createGroup);
+router.put("/:group_id", controller.updateGroup);
+router.delete("/:group_id", controller.deleteGroup);
 
-module.exports = Router
+module.exports = router;
