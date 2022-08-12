@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Group.hasMany(models.Players, { foreignKey: 'playerId', as: 'player'})
+      Group.hasOne(models.Game, { foreignKey: 'gameId',  })
     }
   }
   Group.init({
