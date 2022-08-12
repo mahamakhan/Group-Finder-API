@@ -10,4 +10,18 @@ const findAllGames = async (req, res) => {
   res.send(findGames);
 };
 
-module.exports = { createGame, findAllGames };
+const findGame = async (req, res) => {
+  let findGame = await Game.findByPk(req.params);
+  res.send(findGame);
+};
+
+const updateGame = async (req, res) => {
+  let gameUpdater = await Game.update(req.body, { where: { id: req.params } });
+  res.send(gameUpdater);
+};
+
+const deleteGame = async (req, res) => {
+  let gameDeleter = await Game.destroy({ where: { id: req.params } });
+};
+
+module.exports = { createGame, findAllGames, findGame, updateGame, deleteGame };
