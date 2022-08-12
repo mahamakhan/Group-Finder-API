@@ -1,0 +1,29 @@
+{
+  "name": "group-finder-backend",
+  "version": "1.0.0",
+  "description": "### By: ### Steve Kim [GitHub](https://github.com/Skim1571) | [LinkedIn](https://www.linkedin.com/in/skim1571/) ### Johnathan R Weil [GitHub](https://github.com/JwR513) | [LinkedIn](https://www.linkedin.com/in/johnathan-weil-69b100229/) ### Michael Pines[GitHub](https://github.com/smyp1) | [Linkedin](https://www.linkedin.com/in/mickey-pines/) ### Maham Khan [LinkedIn](https://www.linkedin.com/in/mahamakhan/)  | [Github](https://github.com/mahamakhan)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahamakhan/Group-Finder-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahamakhan/Group-Finder-Backend/issues"
+  },
+  "homepage": "https://github.com/mahamakhan/Group-Finder-Backend#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.3"
+  }
+}
