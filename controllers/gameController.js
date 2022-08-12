@@ -11,17 +11,22 @@ const findAllGames = async (req, res) => {
 };
 
 const findGame = async (req, res) => {
-  let findGame = await Game.findByPk(req.params);
+  gameId = req.params.id;
+  let findGame = await Game.findByPk(gameId);
   res.send(findGame);
 };
 
 const updateGame = async (req, res) => {
-  let gameUpdater = await Game.update(req.body, { where: { id: req.params } });
+  let gameUpdater = await Game.update(req.body, {
+    where: { id: req.params.id },
+    returning: true,
+  });
   res.send(gameUpdater);
 };
 
 const deleteGame = async (req, res) => {
-  let gameDeleter = await Game.destroy({ where: { id: req.params } });
+  let gameDeleter = await Game.destroy({ where: { id: req.params.id } });
+  res.send(`game with id of ${req.params.id} was deleted`);
 };
 
 module.exports = { createGame, findAllGames, findGame, updateGame, deleteGame };
