@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Groups', {
+    await queryInterface.createTable('groups', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,6 +20,20 @@ module.exports = {
       groupSize: {
         type: Sequelize.INTEGER
       },
+      gameId:{
+        type: Sequelize.INTEGER,
+        onDelete:'CASCADE',
+        references:{
+          model:'game',
+          key:'id'
+        }},
+        playerId:{
+          type: Sequelize.INTEGER,
+          onDelete:'CASCADE',
+          references:{
+            model:'players',
+            key:'id'
+          }},
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -31,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Groups');
+    await queryInterface.dropTable('groups');
   }
 };
