@@ -15,7 +15,7 @@ const login = async (req, res) => {
     });
     if (
       player &&
-      (await middleware.comaparePassword(
+      (await middleware.comparePassword(
         player.passcode,
         req.body.password
       ))
@@ -34,9 +34,9 @@ const login = async (req, res) => {
 };
 
 const registerPlayer = async (req, res) => {
-  const { email, password, username, discord } = req.body
-  let passcode = await middleware.hashPassword(password)
-  let createPlayer = await Player.create({ email, passcode, username, discord });
+  const { email, passcode, username, discord } = req.body
+  let password = await middleware.hashPassword(passcode)
+  let createPlayer = await Player.create({ email, password, username, discord });
   res.send(createPlayer);
 };
 
