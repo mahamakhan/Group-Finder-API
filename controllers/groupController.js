@@ -1,9 +1,9 @@
 const { Group, Game, Player } = require("../models/");
-const { Op, literal, fn, col } = require('sequelize')
+
 
 const getAllGroups = async (req, res) => {
-    const groups = await Group.findAll({where: {playerId: req.param.players_id},
-    include:[{model: Game, as :'games'}]})
+    const groups = await Group.findAll({where: { gameId: req.param.game_Id},
+    include:[{model: Player, as :'player'}]})
     res.send (groups)
  
 };
@@ -12,6 +12,7 @@ const getGroup = async (req, res) => {
     const group = await Group.findByPk(req.params);
     res.send(group);
 };
+
 const createGroup = async (req, res) => {
     let group = await Group.create({...req.body, 
         gameId:req.query.game,
