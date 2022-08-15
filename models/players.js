@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         validate: { isEmail: true },
       },
       discord: DataTypes.STRING,
-      password: { type: DataTypes.STRING, allowNull: false },
+      passcode: { type: DataTypes.STRING, allowNull: false },
     },
     {
       sequelize,
