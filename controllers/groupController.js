@@ -9,6 +9,7 @@ const getGroup = async (req, res) => {
   const group = await Group.findByPk(req.params.group_id);
   res.send(group);
 };
+
 const createGroup = async (req, res) => {
   let gameId = req.params.game_id;
   let playerId = req.params.player_id;
