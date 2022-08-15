@@ -16,7 +16,7 @@ router.get(
   "/session",
   middleware.stripToken,
   middleware.verifyToken,
-  controller.checkSession
+  controller.CheckSession
 );
 
 module.exports = router;

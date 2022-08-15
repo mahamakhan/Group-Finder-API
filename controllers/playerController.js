@@ -55,7 +55,7 @@ const deletePlayer = async (req, res) => {
   res.send(`player ${req.params.players_id} was deleted`);
 };
 
-const checkSession = async (req, res) => {
+const CheckSession = async (req, res) => {
   const { payload } = res.locals;
   res.send(payload);
 };
@@ -66,5 +66,5 @@ module.exports = {
   registerPlayer,
   updatePlayer,
   deletePlayer,
-  checkSession,
+  CheckSession,
 };
