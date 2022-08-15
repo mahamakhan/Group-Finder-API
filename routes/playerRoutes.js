@@ -10,7 +10,7 @@ router.put(
   "/:players_id",
   middleware.stripToken,
   middleware.verifyToken,
-  controller.updatePlayer
+  controller.updatePassword
 );
 router.get(
   "/session",
