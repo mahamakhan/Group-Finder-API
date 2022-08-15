@@ -16,7 +16,7 @@ const createGroup = async (req, res) => {
   let group = await Group.create({
     ...req.body,
     gameId,
-    playersId,
+    playerId,
   });
   res.send(group);
 };
