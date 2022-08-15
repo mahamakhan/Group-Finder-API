@@ -42,12 +42,23 @@ const registerPlayer = async (req, res) => {
   res.send(createPlayer);
 };
 
-const updatePlayer = async (req, res) => {
-  let player = await Player.update(req.body, {
-    where: { id: req.params.players_id },
-    returning: true,
-  });
-  res.send(player);
+const updatePassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword } = req.body;
+    const player = await Player.findByPk(req.params.players_id);
+    if (
+      player &&
+      (await middleware.comparePassword(
+        player.dataValues.passcode,
+        oldPassword
+      ))
+    ) {
+      let passcode = await middleware.hashPassword(newPassword);
+      await player.update({ passcode });
+      return res.send({ status: "Ok", payload: player });
+    }
+    res.status(401).send({ status: "Error", msg: "Unauthorized" });
+  } catch (error) {}
 };
 
 const deletePlayer = async (req, res) => {
@@ -59,6 +70,6 @@ module.exports = {
   getPlayers,
   login,
   registerPlayer,
-  updatePlayer,
+  updatePassword,
   deletePlayer,
 };
