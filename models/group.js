@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.STRING,
       groupSize: DataTypes.INTEGER,
       playerId: { type: DataTypes.INTEGER, allowNull: false },
-      businessId: { type: DataTypes.INTEGER, allowNull: false },
+      gameId: { type: DataTypes.INTEGER, allowNull: false },
     },
     {
       sequelize,
