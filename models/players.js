@@ -14,7 +14,12 @@ module.exports = (sequelize, DataTypes) => {
   Player.init(
     {
       username: { type: DataTypes.STRING, allowNull: false },
-      email: { type: DataTypes.STRING, allowNull: false },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: { isEmail: true },
+      },
       discord: DataTypes.STRING,
       password: { type: DataTypes.STRING, allowNull: false },
     },
