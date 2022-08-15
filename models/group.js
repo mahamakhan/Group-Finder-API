@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "playerId",
         as: "player",
       });
-      Group.belongsTo(models.Game, { foreignKey: "gameId" , as : "game"});
+      Group.belongsTo(models.Game, { foreignKey: "gameId", as: "game" });
     }
   }
   Group.init(
@@ -21,6 +21,8 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       description: DataTypes.STRING,
       groupSize: DataTypes.INTEGER,
+      playerId: { type: DataTypes.INTEGER, allowNull: false },
+      businessId: { type: DataTypes.INTEGER, allowNull: false },
     },
     {
       sequelize,
