@@ -1,6 +1,5 @@
 const { Player } = require("../models");
-const middleware= require('../middleware')
-
+const middleware = require("../middleware");
 
 const getPlayers = async (req, res) => {
   let findPlayers = await Player.findAll();
@@ -15,10 +14,7 @@ const login = async (req, res) => {
     });
     if (
       player &&
-      (await middleware.comaparePassword(
-        player.passcode,
-        req.body.password
-      ))
+      (await middleware.comparePassword(player.passcode, req.body.password))
     ) {
       let payload = {
         id: player.id,
@@ -34,16 +30,20 @@ const login = async (req, res) => {
 };
 
 const registerPlayer = async (req, res) => {
-  const { email, password, username, discord } = req.body
-  let passcode = await middleware.hashPassword(password)
-  let createPlayer = await Player.create({ email, passcode, username, discord });
+  const { email, password, username, discord } = req.body;
+  let passcode = await middleware.hashPassword(password);
+  let createPlayer = await Player.create({
+    email,
+    passcode,
+    username,
+    discord,
+  });
   res.send(createPlayer);
 };
 
-
 const updatePlayer = async (req, res) => {
-  let player = await Player.update(req.body,{
-    where: { id: req.params.players_id},
+  let player = await Player.update(req.body, {
+    where: { id: req.params.players_id },
     returning: true,
   });
   res.send(player);
@@ -54,4 +54,10 @@ const deletePlayer = async (req, res) => {
   res.send(`player ${req.params.players_id} was deleted`);
 };
 
-module.exports = { getPlayers, login, registerPlayer, updatePlayer, deletePlayer};
+module.exports = {
+  getPlayers,
+  login,
+  registerPlayer,
+  updatePlayer,
+  deletePlayer,
+};
