@@ -14,14 +14,7 @@ const login = async (req, res) => {
     });
     if (
       player &&
-<<<<<<< HEAD
-      (await middleware.comparePassword(
-        player.passcode,
-        req.body.password
-      ))
-=======
-      (await middleware.comparePassword(player.passcode, req.body.password))
->>>>>>> main
+      middleware.comparePassword(player.passcode, req.body.password)
     ) {
       let payload = {
         id: player.id,
@@ -37,11 +30,6 @@ const login = async (req, res) => {
 };
 
 const registerPlayer = async (req, res) => {
-<<<<<<< HEAD
-  const { email, passcode, username, discord } = req.body
-  let password = await middleware.hashPassword(passcode)
-  let createPlayer = await Player.create({ email, password, username, discord });
-=======
   const { email, password, username, discord } = req.body;
   let passcode = await middleware.hashPassword(password);
   let createPlayer = await Player.create({
@@ -50,7 +38,7 @@ const registerPlayer = async (req, res) => {
     username,
     discord,
   });
->>>>>>> main
+
   res.send(createPlayer);
 };
 
