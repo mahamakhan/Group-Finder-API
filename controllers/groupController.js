@@ -34,10 +34,24 @@ const deleteGroup = async (req, res) => {
   res.send({ msg: "Commented Deleted" });
 };
 
+const findByPlayer = async (req, res) => {
+  let player = req.params.player_id;
+  let group = await Group.findAll({ where: { playerId: player } });
+  res.send(group);
+};
+
+const findByGame = async (req, res) => {
+  let game = req.params.game_id;
+  let group = await Group.findAll({ where: { gameId: game } });
+  res.send(group);
+};
+
 module.exports = {
   getAllGroups,
   getGroup,
   createGroup,
   updateGroup,
   deleteGroup,
+  findByPlayer,
+  findByGame,
 };
