@@ -30,8 +30,6 @@ const login = async (req, res) => {
 };
 
 const registerPlayer = async (req, res) => {
-
-  
   const { email, password, username, discord } = req.body;
   let passcode = await middleware.hashPassword(password);
   let createPlayer = await Player.create({
@@ -68,10 +66,16 @@ const deletePlayer = async (req, res) => {
   res.send(`player ${req.params.players_id} was deleted`);
 };
 
+const CheckSession = async (req, res) => {
+  const { payload } = res.locals;
+  res.send(payload);
+};
+
 module.exports = {
   getPlayers,
   login,
   registerPlayer,
   updatePassword,
   deletePlayer,
+  CheckSession,
 };
