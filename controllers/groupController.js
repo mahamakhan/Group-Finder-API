@@ -1,12 +1,12 @@
 const { Group, Game, Player } = require("../models/");
 
 const getAllGroups = async (req, res) => {
-  const groups = await Group.findAll();
+  let groups = await Group.findAll();
   res.send(groups);
 };
 
 const getGroup = async (req, res) => {
-  const group = await Group.findByPk(req.params.group_id);
+  let group = await Group.findByPk(req.params.group_id);
   res.send(group);
 };
 
