@@ -1,21 +1,21 @@
 const { Unit, Player, Group } = require("../models");
 
-const getAllPlayerGroups = async (req, res) => {
+const getAllUnits = async (req, res) => {
   let playerGroups = await Unit.findAll();
   res.send(playerGroups);
 };
 
-const getPlayerGroup = async (req, res) => {
-  let playerGroup = await Unit.findByPk(req.params.player_groups_id);
+const getUnit = async (req, res) => {
+  let playerGroup = await Unit.findByPk(req.params.id);
   res.send(playerGroup);
 };
 
-const createPlayerGroup = async (req, res) => {
+const createUnit = async (req, res) => {
   let playerGroup = await Unit.create(req.body);
   res.send(playerGroup);
 };
 
-const updatePlayerGroup = async (req, res) => {
+const updateUnit = async (req, res) => {
   let playerGroup = await Unit.update(
     { ...req.body },
     { where: { id: req.params.id }, returning: true }
@@ -23,7 +23,7 @@ const updatePlayerGroup = async (req, res) => {
   res.send(playerGroup);
 };
 
-const deletePlayerGroup = async (req, res) => {
+const deleteUnit = async (req, res) => {
   let playerGroup = await Unit.destroy({
     where: { id: req.params.id },
   });
@@ -47,11 +47,11 @@ const findByGroup = async (req, res) => {
 };
 
 module.exports = {
-  getAllPlayerGroups,
-  getPlayerGroup,
-  createPlayerGroup,
-  updatePlayerGroup,
-  deletePlayerGroup,
+  getAllUnits,
+  getUnit,
+  createUnit,
+  updateUnit,
+  deleteUnit,
   findByPlayer,
   findByGroup,
 };
