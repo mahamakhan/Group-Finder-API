@@ -10,6 +10,20 @@ const getGroup = async (req, res) => {
   res.send(group);
 };
 
+const groupies = async (req, res) => {
+  let group = await Group.findAll({
+    where: { id: req.params.group_id },
+    include: {
+      model: Player,
+      as: "players",
+      through: {
+        attributes: ["id"],
+      },
+    },
+  });
+  res.send(group);
+};
+
 const createGroup = async (req, res) => {
   let group = await Group.create(req.body);
   res.send(group);
@@ -43,6 +57,7 @@ const findByGame = async (req, res) => {
 module.exports = {
   getAllGroups,
   getGroup,
+  groupies,
   createGroup,
   updateGroup,
   deleteGroup,
