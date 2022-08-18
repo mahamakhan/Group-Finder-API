@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Group.belongsToMany(models.Player, {
         through: models.Unit,
-        as: "players",
-        foreignKey: "playerId",
+        as: "groups",
+        foreignKey: "groupId",
       });
       Group.belongsTo(models.Game, { foreignKey: "gameId" });
     }
