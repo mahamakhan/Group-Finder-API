@@ -6,6 +6,14 @@ const getPlayers = async (req, res) => {
   res.send(findPlayers);
 };
 
+const playerName = async (req, res) => {
+  let findPlayerName = await Player.findOne({
+    attributes: ["username"],
+    where: { id: req.params.player_id },
+  });
+  res.send(findPlayerName);
+};
+
 const login = async (req, res) => {
   try {
     let player = await Player.findOne({
@@ -73,6 +81,7 @@ const CheckSession = async (req, res) => {
 
 module.exports = {
   getPlayers,
+  playerName,
   login,
   registerPlayer,
   updatePassword,
