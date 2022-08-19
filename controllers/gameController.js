@@ -16,6 +16,14 @@ const findGame = async (req, res) => {
   res.send(findGame);
 };
 
+const gameImage = async (req, res) => {
+  let findGameImage = await Game.findOne({
+    attributes: ["image"],
+    where: { id: req.params.id },
+  });
+  res.send(findGameImage);
+};
+
 const updateGame = async (req, res) => {
   let gameUpdater = await Game.update(req.body, {
     where: { id: req.params.id },
@@ -29,4 +37,11 @@ const deleteGame = async (req, res) => {
   res.send(`game with id of ${req.params.id} was deleted`);
 };
 
-module.exports = { createGame, findAllGames, findGame, updateGame, deleteGame };
+module.exports = {
+  createGame,
+  findAllGames,
+  findGame,
+  gameImage,
+  updateGame,
+  deleteGame,
+};
