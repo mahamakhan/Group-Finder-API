@@ -1,18 +1,18 @@
 {
   "development": {
-    "password": "abcd",
+    "password": "6488",
     "database": "sequelize_lfg",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "password": "abcd",
+    "password": "6488",
     "database": "sequelize_lfg",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "password": "abcd",
+    "password": "6488",
     "database": "sequelize_lfg",
     "host": "127.0.0.1",
     "dialect": "postgres"
