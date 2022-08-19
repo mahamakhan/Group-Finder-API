@@ -1,21 +1,20 @@
-require("dotenv").config();
-module.exports = {
-  development: {
-    database: "sequelize_lfg",
-    dialect: "postgres",
+{
+  "development": {
+    "password": "6488",
+    "database": "sequelize_lfg",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   },
-  test: {
-    database: "sequelize_lfg",
-    dialect: "postgres",
+  "test": {
+    "password": "6488",
+    "database": "sequelize_lfg",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   },
-  production: {
-    use_env_variable: "DATABASE_URL",
-    dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        rejectUnauthorized: false,
-        require: true,
-      },
-    },
-  },
-};
+  "production": {
+    "password": "6488",
+    "database": "sequelize_lfg",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
