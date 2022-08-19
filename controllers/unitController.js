@@ -25,7 +25,10 @@ const updateUnit = async (req, res) => {
 
 const deleteUnit = async (req, res) => {
   let playerGroup = await Unit.destroy({
-    where: { id: req.params.id },
+    where: [
+      { groupId: req.params.group_id },
+      { playerId: req.params.player_id },
+    ],
   });
   res.send({ msg: "Commented Deleted" });
 };

@@ -7,6 +7,6 @@ router.get("/players/:player_id", controller.findByPlayer);
 router.get("/groups/:group_id", controller.findByGroup);
 router.post("/", controller.createUnit);
 router.put("/:id", controller.updateUnit);
-router.delete("/:id", controller.deleteUnit);
+router.delete("/:group_id/:player_id", controller.deleteUnit);
 
 module.exports = router;
