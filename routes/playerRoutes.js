@@ -14,8 +14,8 @@ router.get(
 );
 router.delete(
   "/:players_id",
-  middleware.stripToken,
-  middleware.verifyToken,
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.deletePlayer
 );
 router.put(
