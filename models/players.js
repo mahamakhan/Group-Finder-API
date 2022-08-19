@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Player.belongsToMany(models.Group, {
-        as: "players",
+        as: "groups",
         through: models.Unit,
         foreignKey: "playerId",
       });

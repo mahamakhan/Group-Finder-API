@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       Group.belongsToMany(models.Player, {
         through: models.Unit,
         as: "players",
-        foreignKey: "playerId",
+        foreignKey: "groupId",
       });
       Group.belongsTo(models.Game, { foreignKey: "gameId" });
     }

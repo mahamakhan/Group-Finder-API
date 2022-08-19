@@ -13,13 +13,13 @@ const getGroup = async (req, res) => {
 const groupies = async (req, res) => {
   let group = await Group.findAll({
     where: { id: req.params.group_id },
-    include: {
+    include: [{
       model: Player,
       as: "players",
       through: {
         attributes: ["id"],
-      },
-    },
+      }
+    }],
   });
   res.send(group);
 };
