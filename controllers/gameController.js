@@ -11,15 +11,15 @@ const findAllGames = async (req, res) => {
 };
 
 const findGame = async (req, res) => {
-  gameId = req.params.id;
+  let gameId = req.params.id;
   let findGame = await Game.findByPk(gameId);
   res.send(findGame);
 };
 
 const gameImage = async (req, res) => {
   let findGameImage = await Game.findOne({
-    attributes: ["image"],
     where: { id: req.params.id },
+    attributes: ["image"],
   });
   res.send(findGameImage);
 };
