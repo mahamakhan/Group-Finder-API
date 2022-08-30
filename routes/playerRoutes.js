@@ -4,7 +4,12 @@ const middleware = require("../middleware");
 
 router.post("/register", controller.registerPlayer);
 router.get("/", controller.getPlayers);
-router.get("/name/:player_id", controller.playerName);
+router.get(
+  "/name/:player_id",
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.playerName
+);
 router.post("/login", controller.login);
 router.get(
   "/session",
